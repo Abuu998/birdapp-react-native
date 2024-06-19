@@ -4,6 +4,7 @@ import { useColorScheme } from 'nativewind'
 
 export default function InputText({
     type = 'text',
+    name = '',
     styles,
     showDefaultStyles = true,
     keyboardType = 'default',
@@ -19,7 +20,7 @@ export default function InputText({
         <TextInput
             inputMode={type}
             keyboardType={keyboardType}
-            onChangeText={onChangeText}
+            onChangeText={(text) => onChangeText(name, text)}
             autoFocus={autoFocus}
             placeholderTextColor={Colors[colorScheme]?.placeholder}
             editable

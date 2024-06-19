@@ -1,42 +1,66 @@
 import { useState } from 'react'
-import { View } from 'react-native'
+import { Alert, View } from 'react-native'
 import InputText from './Input'
 import Label from './Label'
 import Button from '../Button'
 import Checkbox from '../Checkbox'
 import colors from 'tailwindcss/colors'
 
+const initialState = {
+    name: '',
+    username: '',
+    email: '',
+    password: '',
+}
+
 export default function SignupForm() {
     const [showPass, setShowPass] = useState(true)
+    const [data, setData] = useState(initialState)
 
     const toggleShowPass = () => {
         setShowPass((prev) => !prev)
     }
 
+    const onChangeText = (name, text) => {
+        setData((prev) => ({ ...prev, [name]: text }))
+    }
+
     return (
         <View>
-            {/* <Text>SigninForm</Text> */}
-            <Label label="First Name">
-                <InputText placeholder="John" autoFocus />
-            </Label>
-            <Label label="Last Name">
-                <InputText placeholder="Doe" />
+            <Label label="Full Name">
+                <InputText
+                    placeholder="John Doe"
+                    name="name"
+                    onChangeText={onChangeText}
+                    value={data.name}
+                    autoFocus
+                />
             </Label>
             <Label label="Username">
-                <InputText placeholder="johndoe123" />
+                <InputText
+                    placeholder="johndoe123"
+                    name="username"
+                    onChangeText={onChangeText}
+                    value={data.username}
+                />
             </Label>
             <Label label="Email">
                 <InputText
                     placeholder="john.doe@email.com"
+                    name="email"
                     type="email"
                     keyboardType="email-address"
+                    onChangeText={onChangeText}
+                    value={data.email}
                 />
             </Label>
             <Label label="Password">
                 <InputText
                     placeholder="**********"
+                    name="password"
                     secureTextEntry={showPass}
-                    // onChangeText={onChangeText}
+                    onChangeText={onChangeText}
+                    value={data.password}
                 />
                 <Checkbox
                     color={colors.emerald[600]}

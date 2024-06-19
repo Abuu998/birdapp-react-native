@@ -1,4 +1,5 @@
-import { useEffect } from "react";
+import 'expo-dev-client';
+import React, { useEffect } from "react";
 import { Stack } from "expo-router";
 import { useFonts } from "expo-font";
 import * as Splash from "expo-splash-screen";

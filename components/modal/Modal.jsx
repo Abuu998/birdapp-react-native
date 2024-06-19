@@ -1,3 +1,5 @@
+import { StatusBar } from 'expo-status-bar'
+import { useColorScheme } from 'nativewind'
 import { View, Text, Modal, Pressable } from 'react-native'
 
 export default function CustomModal({
@@ -6,8 +8,11 @@ export default function CustomModal({
     children,
     onClose = () => {},
 }) {
+    const { colorScheme: theme } = useColorScheme()
+
     return (
         <Modal animationType="slide" transparent={true} visible={isVisible}>
+            <StatusBar style={theme === 'dark' ? 'light' : 'dark'} />
             <View className="flex-1 items-center bg-slate-300 dark:bg-slate-800 h-1/3 w-full absolute bottom-0 rounded-t-2xl">
                 <View className="items-center rounded-t-xl w-full overflow-hidden">
                     <View className="px-4 py-1 items-center w-full bg-slate-400 dark:bg-slate-700 border-b border-b-slate-300 dark:border-b-slate-600">

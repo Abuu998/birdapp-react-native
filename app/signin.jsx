@@ -1,8 +1,9 @@
 import {
-    ScrollView,
+    KeyboardAvoidingView,
     Text,
     TouchableWithoutFeedback,
     Keyboard,
+    Platform,
 } from 'react-native'
 import { Link } from 'expo-router'
 import { SafeAreaView } from 'react-native-safe-area-context'
@@ -12,11 +13,15 @@ import { Ionicons } from '@expo/vector-icons'
 import SigninProviders from '../components/SigninProviders'
 import colors from 'tailwindcss/colors'
 import BirdLogo from '../components/logo/BirdLogo'
+import React from 'react'
 
 export default function SignIn() {
     return (
-        <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
-            <ScrollView className="flex-1 bg-slate-200 dark:bg-slate-900">
+        <KeyboardAvoidingView
+            behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
+            className="flex-1 bg-slate-200 dark:bg-slate-900"
+        >
+            <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
                 <SafeAreaView className="py-8 px-4">
                     <BirdLogo marginBottom="mb-10" />
                     <Text className="mb-6 text-2xl italic text-slate-950 dark:text-slate-100">
@@ -61,7 +66,7 @@ export default function SignIn() {
                         Signup
                     </Link>
                 </SafeAreaView>
-            </ScrollView>
-        </TouchableWithoutFeedback>
+            </TouchableWithoutFeedback>
+        </KeyboardAvoidingView>
     )
 }
