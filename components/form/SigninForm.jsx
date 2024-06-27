@@ -25,6 +25,7 @@ export default function SignupForm() {
         ...initialState,
     })
     const [loading, setLoading] = useState(false)
+    const [loggindata, setLogginData] = useState({})
 
     const toggleShowPass = () => {
         setShowPass((prev) => !prev)
@@ -65,8 +66,9 @@ export default function SignupForm() {
 
             if (success) {
                 setData(initialState)
+                setLogginData(data)
                 ToastAndroid.show('Login Successful!', ToastAndroid.SHORT)
-                console.log(data)
+                router.replace('/')
                 return
             } else {
                 ToastAndroid.show(error.message, ToastAndroid.SHORT)

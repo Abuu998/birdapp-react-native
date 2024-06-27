@@ -29,7 +29,16 @@ export default function ThemeButton({
                     <Ionicons
                         name={getThemeIcon(themeName).iconName}
                         size={14}
-                        color={getIconColor(theme, selectedTheme)}
+                        color={
+                            theme === selectedTheme ||
+                            selectedTheme === 'system'
+                                ? colors.white
+                                : theme === 'dark'
+                                ? colors.slate[100]
+                                : theme === 'light'
+                                ? colors.slate[950]
+                                : ''
+                        }
                     />
                 </View>
                 <Text className="text-base text-slate-950 dark:text-slate-100 mx-5">{`${themeName
@@ -39,16 +48,6 @@ export default function ThemeButton({
             <View>{getThemeIcon(themeName).box}</View>
         </Pressable>
     )
-}
-
-function getIconColor(theme, selectedTheme) {
-    if (!selectedTheme === theme && !theme === 'dark') {
-        return colors.slate[950]
-    }
-
-    if (selectedTheme === 'dark' && theme === 'dark') {
-        return colors.slate[100]
-    }
 }
 
 function getThemeIcon(theme) {
