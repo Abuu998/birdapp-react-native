@@ -1,4 +1,7 @@
+import React from 'react'
 import { TouchableOpacity, Text } from 'react-native'
+import ThemedText from './text/ThemedText'
+import SoftText from './text/SoftText'
 
 export default function NumberWithLabel({
     number,
@@ -11,14 +14,8 @@ export default function NumberWithLabel({
             onPress={onPress}
             className={`flex-row items-center ${styles}`}
         >
-            <Text
-                className={`text-slate-950 dark:text-slate-100 font-semibold`}
-            >
-                {number}
-            </Text>
-            <Text className="text-slate-600 dark:text-slate-400 ml-1">
-                {label}
-            </Text>
+            <ThemedText style="font-semibold">{number}</ThemedText>
+            <SoftText style="ml-1">{label}</SoftText>
         </TouchableOpacity>
     )
 }

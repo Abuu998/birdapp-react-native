@@ -1,3 +1,4 @@
+import React from 'react'
 import { View, Text, TouchableOpacity } from 'react-native'
 import { Ionicons, FontAwesome6 } from '@expo/vector-icons'
 import colors from 'tailwindcss/colors'

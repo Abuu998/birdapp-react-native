@@ -1,3 +1,4 @@
+import React from 'react'
 import { View } from 'react-native'
 import HeaderProfile from '../profile/HeaderProfile'
 import BirdLogo from '../logo/BirdLogo'

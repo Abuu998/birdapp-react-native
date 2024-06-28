@@ -1,5 +1,7 @@
-import { Text, Pressable } from 'react-native'
+import React from 'react'
+import { Pressable } from 'react-native'
 import { CheckBox } from 'react-native-btr'
+import ThemedText from './text/ThemedText'
 
 export default function Checkbox({
     onPress = () => {},
@@ -19,11 +21,7 @@ export default function Checkbox({
                 borderRadius={6}
                 color={color}
             />
-            <Text
-                className={`ml-6 text-slate-950 dark:text-slate-100 ${labelStyles}`}
-            >
-                {label}
-            </Text>
+            <ThemedText style={`ml-6 ${labelStyles}`}>{label}</ThemedText>
         </Pressable>
     )
 }

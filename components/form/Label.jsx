@@ -1,11 +1,11 @@
+import React from 'react'
 import { View, Text } from 'react-native'
+import ThemedText from '../text/ThemedText'
 
 export default function Label({ label, children }) {
     return (
         <View className="flex-col gap-1 mt-2">
-            <Text className="text-slate-950 dark:text-slate-100 text-base font-semibold">
-                {label}:
-            </Text>
+            <ThemedText style="text-base font-semibold">{label}:</ThemedText>
             {children}
         </View>
     )

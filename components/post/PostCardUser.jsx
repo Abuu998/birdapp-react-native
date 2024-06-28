@@ -1,11 +1,13 @@
+import React from 'react'
 import { View, Text } from 'react-native'
+import ThemedText from '../text/ThemedText'
 
 export default function PostCardUser({ user, row = true }) {
     return (
         <View className={`flex-${row ? 'row' : 'column'}`}>
-            <Text className="font-semibold text-base tracking-tighter text-slate-950 dark:text-slate-100">
+            <ThemedText style="font-semibold text-base tracking-tighter">
                 Nduwimana Abubakar
-            </Text>
+            </ThemedText>
             <Text className="text-slate-600 dark:text-slate-400 ml-1">
                 @abuu998
             </Text>

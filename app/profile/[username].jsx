@@ -1,7 +1,9 @@
+import React from 'react'
 import { useLocalSearchParams } from 'expo-router'
 import { ScrollView, Text, View, Pressable } from 'react-native'
 import { Ionicons } from '@expo/vector-icons'
 import { router } from 'expo-router'
+import ThemedText from '@/components/text/ThemedText'
 
 export default function UserProfile() {
     const { username } = useLocalSearchParams()
@@ -22,9 +24,9 @@ export default function UserProfile() {
                 </Pressable>
             </View>
             <ScrollView className="px-4">
-                <Text className="text-3xl dark:text-slate-100">
+                <ThemedText style="text-3xl">
                     UserProfile: {username}
-                </Text>
+                </ThemedText>
             </ScrollView>
         </View>
     )

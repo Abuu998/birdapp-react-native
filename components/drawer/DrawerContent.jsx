@@ -1,3 +1,4 @@
+import React, { useState } from 'react'
 import { Pressable, View, Text } from 'react-native'
 import { DrawerContentScrollView } from '@react-navigation/drawer'
 import DrawerProfile from '../profile/DrawerProfile'
@@ -13,7 +14,6 @@ import IconText from './IconText'
 import SettingsIcon from '../header/SettingsIcon'
 import { router } from 'expo-router'
 import ThemeModal from '../modal/Modal'
-import { useState } from 'react'
 import ThemeSwitcher from '../themes/ThemeSwitcher'
 
 export default function CustomDrawerContent(props) {

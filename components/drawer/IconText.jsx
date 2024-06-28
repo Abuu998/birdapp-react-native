@@ -1,4 +1,6 @@
-import { Pressable, Text } from 'react-native'
+import React from 'react'
+import { Pressable } from 'react-native'
+import ThemedText from '../text/ThemedText'
 
 export default function IconText({
     text,
@@ -14,9 +16,7 @@ export default function IconText({
             {...props}
         >
             {children}
-            <Text className={`text-slate-950 dark:text-slate-100 ${textStyle}`}>
-                {text}
-            </Text>
+            <ThemedText style={textStyle}>{text}</ThemedText>
         </Pressable>
     )
 }

@@ -1,4 +1,6 @@
-import { TouchableOpacity, Text } from 'react-native'
+import React from 'react'
+import { TouchableOpacity } from 'react-native'
+import ThemedText from './text/ThemedText'
 
 export default function Button({
     onPress = () => {},
@@ -14,7 +16,7 @@ export default function Button({
             className={`${rounded ? 'rounded-md' : ''} ${btnStyles}`}
             {...props}
         >
-            <Text className={`${textStyle}`}>{children}</Text>
+            <ThemedText style={textStyle}>{children}</ThemedText>
         </TouchableOpacity>
     )
 }

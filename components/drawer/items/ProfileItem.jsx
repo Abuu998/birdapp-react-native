@@ -1,3 +1,4 @@
+import React from 'react'
 import { Text } from 'react-native'
 import { FontAwesome5 } from '@expo/vector-icons'
 import { DrawerItem } from '@react-navigation/drawer'

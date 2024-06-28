@@ -1,6 +1,8 @@
+import React from 'react'
 import { StatusBar } from 'expo-status-bar'
 import { useColorScheme } from 'nativewind'
-import { View, Text, Modal, Pressable } from 'react-native'
+import { View, Modal, Pressable } from 'react-native'
+import ThemedText from '../text/ThemedText'
 
 export default function CustomModal({
     isVisible = false,
@@ -22,9 +24,9 @@ export default function CustomModal({
                         ></Pressable>
                     </View>
                     <View className="w-full px-4 py-1 pb-2 bg-slate-400 dark:bg-slate-700">
-                        <Text className="text-slate-800 dark:text-slate-100 text-base self-start font-semibold">
+                        <ThemedText style="text-base self-start font-semibold">
                             {title}
-                        </Text>
+                        </ThemedText>
                     </View>
                 </View>
                 <View className="px-4 self-start">{children}</View>

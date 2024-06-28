@@ -1,8 +1,9 @@
-import { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { View, Text, Pressable } from 'react-native'
 import { Ionicons } from '@expo/vector-icons'
 import { useColorScheme } from 'nativewind'
 import colors from 'tailwindcss/colors'
+import ThemedText from '../text/ThemedText'
 
 export default function ThemeButton({
     themeName = 'system',
@@ -41,9 +42,11 @@ export default function ThemeButton({
                         }
                     />
                 </View>
-                <Text className="text-base text-slate-950 dark:text-slate-100 mx-5">{`${themeName
-                    .slice(0, 1)
-                    .toUpperCase()}${themeName.slice(1)}`}</Text>
+                <ThemedText style="text-base mx-5">
+                    {`${themeName.slice(0, 1).toUpperCase()}${themeName.slice(
+                        1
+                    )}`}
+                </ThemedText>
             </View>
             <View>{getThemeIcon(themeName).box}</View>
         </Pressable>

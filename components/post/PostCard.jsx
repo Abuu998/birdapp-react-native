@@ -1,3 +1,4 @@
+import React from 'react'
 import { View, Text } from 'react-native'
 import { Ionicons } from '@expo/vector-icons'
 import PostCardProfile from '../profile/PostCardProfile'
@@ -5,6 +6,7 @@ import PostCardUser from './PostCardUser'
 import colors from 'tailwindcss/colors'
 import { useColorScheme } from 'nativewind'
 import PostCardFunctions from './PostCardFunctions'
+import ThemedText from '../text/ThemedText'
 
 export default function PostCard({ post }) {
     const { colorScheme: theme } = useColorScheme()
@@ -32,12 +34,12 @@ export default function PostCard({ post }) {
                     />
                 </View>
                 <View className="mt-1">
-                    <Text className="text-slate-950 dark:text-slate-100">
+                    <ThemedText>
                         Lorem ipsum dolor sit amet, consectetur adipisicing
                         elit. Quae possimus dignissimos, cupiditate ullam
                         praesentium in. Dolorum excepturi doloribus quibusdam
                         at.
-                    </Text>
+                    </ThemedText>
                     <PostCardFunctions />
                 </View>
 

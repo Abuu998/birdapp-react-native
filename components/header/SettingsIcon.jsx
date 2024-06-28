@@ -1,3 +1,4 @@
+import React from 'react'
 import { Ionicons } from '@expo/vector-icons'
 import colors from 'tailwindcss/colors'
 import { useColorScheme } from 'nativewind'

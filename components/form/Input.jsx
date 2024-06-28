@@ -1,3 +1,4 @@
+import React from 'react'
 import { TextInput } from 'react-native'
 import { Colors } from '@/constants/Colors'
 import { useColorScheme } from 'nativewind'

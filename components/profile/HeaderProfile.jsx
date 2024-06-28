@@ -1,3 +1,4 @@
+import React from 'react'
 import { Image, TouchableOpacity } from 'react-native'
 import { FontAwesome6 } from '@expo/vector-icons'
 import colors from 'tailwindcss/colors'

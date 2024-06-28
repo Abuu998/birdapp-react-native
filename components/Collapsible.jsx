@@ -1,8 +1,10 @@
+import React from 'react'
 import { View, Text, Pressable } from 'react-native'
 import useToggle from '@/hooks/useToggle'
 import { Ionicons } from '@expo/vector-icons'
 import colors from 'tailwindcss/colors'
 import { useColorScheme } from 'nativewind'
+import ThemedText from './text/ThemedText'
 
 export default function Collapsible({ label, children, styles }) {
     const [on, toggleOn] = useToggle()
@@ -11,9 +13,7 @@ export default function Collapsible({ label, children, styles }) {
     return (
         <Pressable className={`${styles}`} onPress={() => toggleOn()}>
             <View className="flex-row items-center justify-between">
-                <Text className="text-slate-950 dark:text-slate-100 text-base font-semibold">
-                    {label}
-                </Text>
+                <ThemedText style="text-base font-semibold">{label}</ThemedText>
                 <Ionicons
                     name={on ? 'caret-up-outline' : 'caret-down-outline'}
                     size={24}
