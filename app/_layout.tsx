@@ -16,7 +16,6 @@ export default function RootLayout() {
         Nunito: require("../assets/fonts/Nunito-Regular.ttf"),
         NunitoSemibold: require("../assets/fonts/Nunito-SemiBold.ttf"),
         NunitoBold: require("../assets/fonts/Nunito-Bold.ttf"),
-        NunitoBlack: require("../assets/fonts/Nunito-Black.ttf"),
         NunitoMedium: require("../assets/fonts/Nunito-Medium.ttf"),
     })
     
